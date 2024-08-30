@@ -1,0 +1,37 @@
+public class System_Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("        OOOOOOOOO        O      OOOOO OOOOO       OOOOOOOOOO  OOOOO   OOO") ;
+		System.out.println("         OOO   OOO      OOO      OOO   OOO         OOO    OO    OOO  OO  ") ;
+		System.out.println("         OOOOOOOO      O  OO     OOO   OOO         OOOOOOO        OOO    ") ;
+		System.out.println("         OOO  OOO     OOOOOOO    OOO   OOO     O   OOO    OO      OOO    ") ;
+		System.out.println("        OOOOO  OOOO  OO   OOOO  OOOOO OOOOOOOOOO  OOOOOOOOOO     OOOOOO  ") ;
+	
+		System.out.println( );
+		double top1 = 6.0*3.5 ;
+		double top2 = 1.5*5 ;
+		double bot = 55.6 - 30.2 ;
+		double answ = (top1-top2)/bot ;
+		System.out.println(answ) ;
+		
+	
+					
+					
+		double rad=4.0;
+		double rad2=16.0;
+		double pi=3.1519;
+						
+		System.out.print("The circumference of the circle is ");
+		System.out.print(2*pi*rad);
+		System.out.print(" and the area of the circle is ");
+		System.out.println(pi*rad2);
+				
+		
+
+
+
+	}
+
+}
