@@ -1,0 +1,33 @@
+public class Intro_Cube {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//This class calculates the  side, area, and volume  of  a cube. 
+		
+		//Task  1 : Declare a side length as an int 
+
+		double side = 2;
+		// Here I declared the side length as "side"
+		double area = side*side ;
+		// Here I declared the area of the cube as "area" which would  be it's  side times its side
+		
+		System.out.print("The side length of a cube is ");
+		System.out.print(side) ;
+		System.out.print(" and it's area is ");
+		System.out.print((int) area) ;
+		System.out.println(".") ;
+		// Here I printed out the declared values into a sentence.
+		
+		//Task 3: Volume
+		double volume = side*side*side ;
+		// Here I declared the cube's volume as "volume" which is its side cubed.
+		System.out.print("It's  volume is ") ;
+		System.out.print((int) volume);
+		// Here I printed out a sentence for the  volume and declared the volume which is a double and turned it into an int.
+
+		
+		
+	}
+
+}
