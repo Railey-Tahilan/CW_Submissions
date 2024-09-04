@@ -3,11 +3,16 @@ public class System_Practice {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		// This prints out my name in ASCII art using the leter O
+
 		System.out.println("        OOOOOOOOO        O      OOOOO OOOOO       OOOOOOOOOO  OOOOO   OOO") ;
 		System.out.println("         OOO   OOO      OOO      OOO   OOO         OOO    OO    OOO  OO  ") ;
 		System.out.println("         OOOOOOOO      O  OO     OOO   OOO         OOOOOOO        OOO    ") ;
 		System.out.println("         OOO  OOO     OOOOOOO    OOO   OOO     O   OOO    OO      OOO    ") ;
 		System.out.println("        OOOOO  OOOO  OO   OOOO  OOOOO OOOOOOOOOO  OOOOOOOOOO     OOOOOO  ") ;
+
+
+		//This prints out 0.531496062992126 using a math problem given.
 	
 		System.out.println( );
 		double top1 = 6.0*3.5 ;
@@ -16,12 +21,11 @@ public class System_Practice {
 		double answ = (top1-top2)/bot ;
 		System.out.println(answ) ;
 		
-	
-					
-					
+		//This is an adaptable code that prints out a circumference and area of a circle using a radius
+								
 		double rad=4.0;
 		double rad2=16.0;
-		double pi=3.1519;
+		double pi=3.141592653589793238462643383279502884197;
 						
 		System.out.print("The circumference of the circle is ");
 		System.out.print(2*pi*rad);
