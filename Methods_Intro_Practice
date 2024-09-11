@@ -1,0 +1,92 @@
+
+public class Methods_Intro_Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		stateName() ;
+		stateEyeColor() ;
+		stateHairStyle() ;
+		stateBestFriend() ;
+		stateFavoriteFood() ;
+	printCircleStats(3);
+	printCircleStats(4,2); 	
+		
+		
+	}
+	//this method prints out information like my name, eye color, hair style, best friend and fav food.
+	public static void stateName()
+	{
+	System.out.println("My name is Railey Tahilan");
+	
+	}
+	
+	public static void  stateEyeColor()
+	{
+	System.out.println("My eye color is brown") ;
+	}
+	
+	public static void  stateHairStyle()
+	{
+	System.out.println("My hair style is wavy hair") ;
+	}
+	
+	public static void  stateBestFriend()
+	{
+	System.out.println("My best friend is Alan Le") ;
+	}
+	
+	public static void  stateFavoriteFood()
+	{
+	System.out.println("My favorite food sushi") ;
+	System.out.println(" ") ;
+	}
+	
+	
+	// this method prints out the diameter, circumference, and an area using a given radius.
+	public static void printCircleStats(double x)
+	{
+		
+		
+		double dia=2*x ;
+		double pi = 3.141592653589793238462643383279502884197 ;
+		double circ = pi*dia ;
+		double area = pi*x*x ;
+		
+		 System.out.print("The radius is ");
+		 System.out.println(x);
+		 System.out.print("The diameter is ");
+		 System.out.println(dia);
+		 System.out.print("The circumfrence is ");
+		 System.out.println(circ);
+		 System.out.print("The area is ");
+		 System.out.println(area);
+		 System.out.println(" ");
+	
+		 
+	
+	}
+	//this method calculates the sum, difference, product, quotient and remainder using two numbers.
+	public static void printCircleStats(int y, int z)
+	
+	
+	{
+		int sum = y+z ;
+		int diff = y-z ;
+		int prod = y*z ;
+		int quot = y/z ;
+		int mod = y%z ;
+		 System.out.println(y+"+"+z+"="+sum);
+		 System.out.println(y+"-"+z+"="+diff);
+		 System.out.println(y+"*"+z+"="+prod);
+		 System.out.println(y+"/"+z+"="+quot+" with a remainder of "+mod);
+			}
+	
+	
+	
+	
+	
+	
+	
+	
+}
