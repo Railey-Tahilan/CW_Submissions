@@ -1,0 +1,130 @@
+
+public class Non_Void_Method_Practice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//Task 1, I printed out the statements from the methods and the return statements
+		System.out.println(stateName()) ;
+		System.out.println(stateEyeColor()) ;
+		System.out.println(stateHairStyle()) ;
+		System.out.println(stateBestFriend()) ;
+		System.out.println(stateFavoriteFood()) ;
+		System.out.println(" ") ;
+
+//Task 2, I gave values to radius and all the factors I needed to find using the nonvoid methods and printed it out into a statement 
+		double radius = 8.0 ;
+		double diameter = calcDiameter(radius) ;
+		double circumference= calcCircumference(radius) ;
+		double area = calcArea(radius) ;
+		
+		System.out.print("The radius of a cicle is "+radius+",") ;
+		System.out.print(" the diameter is "+diameter+",") ;
+		System.out.print(" the circumference is "+circumference+",") ;
+		System.out.println(" and the area is "+area+".") ;
+		System.out.println(" ") ;
+		
+//Task 3, I gave different values to ints using nonvoid methods and gave values to x and y and printed out the statements for each equation
+		int x=10 ;
+		int y =6 ;
+		int sum = calcSum(x,y) ;
+		int difference = calcDifference(x,y) ;
+		int product = calcProduct(x,y) ;
+		int quotient = calcQuotient(x,y) ;
+		int remainder = calcRemainder(x,y) ;
+				
+		 System.out.println(x+"+"+y+"="+sum);
+		 System.out.println(x+"-"+y+"="+difference);
+		 System.out.println(x+"*"+y+"="+product);
+		 System.out.println(x+"/"+y+"="+quotient+" with a remainder of "+remainder);
+				
+				
+				
+				
+				
+	}
+	
+///This is the first task I created a nonvoid method that prints out my name, eye color, hair style, best friend and favorite food
+
+	public static String stateName()
+	{
+	return("My name is Railey Tahilan");
+	}
+	
+	public static String stateEyeColor()
+	{
+	return("My eye color is brown");
+	}
+	
+	public static String stateHairStyle()
+	{
+	return("My hairstyle is wavy");
+	}
+	
+	public static String stateBestFriend()
+	{
+	return("My best friend is Alan Le");
+	}
+	
+	public static String stateFavoriteFood()
+	{
+	return("My favortie food is sushi");
+	}
+	
+	
+//This is the 2nd task where I created a method passed as a double to resemble a circles radius, and using the radius find the diameter, circumference, and area
+	
+	public static double calcDiameter(double radius)
+	{
+	return(2*radius);
+	}
+	
+	public static double calcCircumference(double radius)
+	{
+		return(3.141592653589793238462643383279502884197*2*radius);	
+	}
+	
+	public static double calcArea(double radius)
+	{
+		return(3.141592653589793238462643383279502884197*radius*radius);	
+	}
+	
+	
+//This is the 3rd task where I created nonvoid methods using two ints and finding their sums, differences, products, quotients, and the remainder (modulus)
+	
+	public static int calcSum(int x, int y)
+	
+	{
+		return(x+y);	
+	}	
+	
+	public static int calcDifference(int x, int y)
+	
+	{
+		return(x-y);	
+	}
+	
+	public static int calcProduct(int x, int y)
+	
+	{
+		return(x*y);	
+	}
+	
+	public static int calcQuotient(int x, int y)
+	
+	{
+		return(x/y);	
+	}
+	
+	public static int calcRemainder(int x, int y)
+	
+	{
+		return(x%y);	
+	
+	}
+
+
+	
+	
+}
+
