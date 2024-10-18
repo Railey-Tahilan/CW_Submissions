@@ -1,0 +1,82 @@
+import java.util.Scanner ;
+
+public class StringsIntro {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		/*
+		 * This creates a scanner object which allows me to type in any word I 
+		 */
+		Scanner myReader= new Scanner(System.in) ;
+		
+		/*
+		 * This creates an object "myInput" which is basically what I type into the console
+		 */
+		String myInput = new String(myReader.next()) ;
+		
+		
+		myReader.close();
+		
+		/*
+		 * This calls the method "printSecondAndLastLetter"
+		 */
+		printSecondAndLastLetter( myInput );
+	
+		/*
+		 * This prints out which index the first e occurs
+		 */
+		System.out.println("The first \"e\" occurs at index " + findTheE(myInput));
+		
+		/*
+		 * This prints out the length of the word typed into the console
+		 */
+		System.out.print("\"" + myInput + "\"")  ;
+		System.out.println(" is " +  getLength(myInput) + " characters long")  ;
+
+		/*
+		 * This calls the method "printFirstAndLastThree"
+		 */
+		printFirstAndLastThree(myInput);
+
+	}
+
+		/*
+		 * This method locates and prints the second and last letter of the input
+		 */
+		public static void printSecondAndLastLetter(String str)
+		{
+		System.out.println("Second letter is \"" + str.charAt(1)+"\"");
+	
+		System.out.println("Last letter is \"" + str.charAt(str.length() - 1)+ "\"");
+		}
+		
+		/*
+		 * This method locates and returns where the first e occurs
+		 */
+		public static int findTheE(String str)
+		{
+			return(str.indexOf('e'));
+		}
+		
+		/*
+		 * This method finds and returns the lenght of the input
+		 */
+		public static int getLength(String str)
+		{
+			return(str.length());
+		}
+		
+		/*
+		 * This method finds and returns the first and last three letters of the input
+		 */
+		public static void printFirstAndLastThree(String str)
+		{
+		System.out.println("The first three leters are \"" + str.substring(0,3)+ "\"");
+		
+		System.out.println("The last three leters are \"" + str.substring(str.length()-3, str.length())+ "\"");
+		}
+	
+	
+
+}
