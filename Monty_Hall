@@ -1,0 +1,152 @@
+import java.util.Scanner;
+
+public class Monty_Hall {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int winDoor=pickRandomDoor() ;
+		System.out.println(winDoor);
+		int playerDoor = pickPlayerDoor() ;
+		
+		
+		int revealDoor=revealWrongDoor(winDoor, playerDoor) ;
+		
+		
+
+		System.out.println(playerDoor) ;
+		System.out.print("Door ");
+		System.out.print(revealDoor) ;
+		System.out.print(" is a wrong door ");
+	}
+	
+	
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	private static int pickRandomDoor()
+	{
+	return (int)(Math.random()*3+1) ;
+	}
+	
+		
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+ 
+	
+	private static int pickPlayerDoor()
+	{
+	
+	Scanner myReader= new Scanner(System.in) ;
+		
+	System.out.print("Hey boy pick door one, two, or three:") ;
+	
+	String myInput = new String(myReader.next()) ;
+	
+	myReader.close();
+	
+	if (myInput.equals("one")||myInput.equals("1"))
+	{ 
+		System.out.print("Good boy, you chose door number ");
+		return 1;
+	}
+	else if (myInput.equals("two")||myInput.equals("2"))
+	{
+		System.out.print("Good boy, you chose door number ");
+
+		return 2;
+	}
+	else if (myInput.equals("three")||myInput.equals("3"))
+	{
+		System.out.print("Good boy, you chose door number ");
+
+		return 3;
+	}
+	else 
+	{
+		return 0;
+	}
+		
+	}
+	
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	private static int revealWrongDoor(int win, int player)
+	{
+		if (win==3 && player==1)
+		{
+			
+			return 2;
+		}
+		if (win==3 && player==2)
+		{
+			
+			return 1;
+		}
+		if (win==2 && player==1)
+		{
+			
+			return 3;
+		}
+		if (win==2 && player==3)
+		{
+			
+			return 1;
+		}
+		if (win==1 && player==2)
+		{
+			
+			return 3;
+		}
+		if (win==1 && player==3)
+		{
+			
+			return 2;
+		}
+		if (win==1 && player==1)
+		{
+			
+			return (int)(Math.random()*2+1);
+		}
+		if (win==3 && player==3)
+		{
+			
+			return (int)(Math.random()*2+1);
+		}
+		else 
+		{
+			int randomNum = ((int)(Math.random()*2+4)) ;
+			if (win==2 && player==2 && randomNum==4)
+					{
+						return 1 ;
+					}
+			if (win==2 && player==2 && randomNum==5)
+			{
+				return 3 ;
+			}
+
+			
+		}
+		
+			return 0 ;
+	}
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	 
+	
+		private static int stayOrSwap()
+		{
+		
+		Scanner myReader= new Scanner(System.in) ;
+			
+		System.out.print("Hey boy, would you like to Swap or Stay?") ;
+		
+		String myInput = new String(myReader.next()) ;
+		
+		myReader.close();
+		
+		if (myInput.equals("Swap") && )
+		{
+			return 
+		}
+
+		
+
+}
+
