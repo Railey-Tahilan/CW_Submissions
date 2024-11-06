@@ -1,23 +1,48 @@
 import java.util.Scanner;
+public class Mont {
+	static 	Scanner myReader= new Scanner(System.in) ;
 
-public class Monty_Hall {
 
 	public static void main(String[] args) {
+		
 		// TODO Auto-generated method stub
 		int winDoor=pickRandomDoor() ;
 		System.out.println(winDoor);
+		
+
 		int playerDoor = pickPlayerDoor() ;
 		
 		
-		int revealDoor=revealWrongDoor(winDoor, playerDoor) ;
-		
+		int wrongDoorD=revealWrongDoor(winDoor, playerDoor) ;
+		int wrongDoorS=revealWrongDoorSame(winDoor, playerDoor) ;
+		int remainingDoor = revealRemainingDoor(wrongDoorD, playerDoor);
 		
 
+
+		
+		
 		System.out.println(playerDoor) ;
+	
+
 		System.out.print("Door ");
-		System.out.print(revealDoor) ;
-		System.out.print(" is a wrong door ");
+		System.out.print(wrongDoorD) ;
+		System.out.println(" is a wrong door ");
+		
+
+		System.out.print("Would you like to swap to door ")  ;
+		System.out.println(remainingDoor) ;
+		System.out.print("Please input \"Yes\" or \"No\":")  ;
+
+	
+		
+		switchOrNah(winDoor, playerDoor, remainingDoor);
+		
+		
+		
+		myReader.close();
+
 	}
+
 	
 	
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
@@ -35,35 +60,37 @@ public class Monty_Hall {
 	private static int pickPlayerDoor()
 	{
 	
-	Scanner myReader= new Scanner(System.in) ;
+	
 		
-	System.out.print("Hey boy pick door one, two, or three:") ;
+	System.out.println("Choose a door | (1) or (2) or (3)") ;
+	System.out.print("Please type input here:") ;
 	
 	String myInput = new String(myReader.next()) ;
 	
-	myReader.close();
 	
 	if (myInput.equals("one")||myInput.equals("1"))
 	{ 
-		System.out.print("Good boy, you chose door number ");
+		System.out.print("You chose door number ");
 		return 1;
 	}
 	else if (myInput.equals("two")||myInput.equals("2"))
 	{
-		System.out.print("Good boy, you chose door number ");
+		System.out.print("You chose door number ");
 
 		return 2;
 	}
 	else if (myInput.equals("three")||myInput.equals("3"))
 	{
-		System.out.print("Good boy, you chose door number ");
+		System.out.print("You chose door number ");
 
 		return 3;
 	}
 	else 
 	{
-		return 0;
+		 System.out.println("*ERROR* please input \"1\" or \"2\" or \"3\"");
+		 pickPlayerDoor();
 	}
+	return 2 ;
 		
 	}
 	
@@ -72,7 +99,6 @@ public class Monty_Hall {
 	{
 		if (win==3 && player==1)
 		{
-			
 			return 2;
 		}
 		if (win==3 && player==2)
@@ -103,7 +129,7 @@ public class Monty_Hall {
 		if (win==1 && player==1)
 		{
 			
-			return (int)(Math.random()*2+1);
+			return (int)(Math.random()*2+2);
 		}
 		if (win==3 && player==3)
 		{
@@ -128,25 +154,116 @@ public class Monty_Hall {
 			return 0 ;
 	}
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-	 
-	
-		private static int stayOrSwap()
+	public static int revealWrongDoorSame (int win, int player)
+	{
+	if (win==1 && player==1)
+	{
+		
+		return (int)(Math.random()*2+2);
+	}
+	if (win==3 && player==3)
+	{
+		
+		return (int)(Math.random()*2+1);
+	}
+	else 
+	{
+		int randomNum = ((int)(Math.random()*2+4)) ;
+		if (win==2 && player==2 && randomNum==4)
+				{
+					return 1 ;
+				}
+		if (win==2 && player==2 && randomNum==5)
 		{
-		
-		Scanner myReader= new Scanner(System.in) ;
-			
-		System.out.print("Hey boy, would you like to Swap or Stay?") ;
-		
-		String myInput = new String(myReader.next()) ;
-		
-		myReader.close();
-		
-		if (myInput.equals("Swap") && )
-		{
-			return 
+			return 3 ;
 		}
 
 		
+	}
+	
+		return 0 ;
+		
+	}
 
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+	public static int revealRemainingDoor(int wrong, int player)
+	{
+		if (wrong==2 && player==1)
+		{
+			return 3 ;
+		}
+		if (wrong==3 && player==1)
+		{
+			return 2 ;
+		}
+		if (wrong==1 && player==2)
+		{
+			return 3 ;
+		}
+		if (wrong==3 && player==2)
+		{
+			return 1 ;
+		}
+		if (wrong==2 && player==3)
+		{
+			return 1 ;
+		}
+		if (wrong==1 && player==3)
+		{
+			return 2 ;
+		}
+		
+		else return 0;
+	}
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	public static void switchOrNah(int winDoor, int playerDoor, int remainingDoor)
+	{
+	String input = new String(myReader.next());
+	if (input.equals("yes") || input.equals("Yes") ) 
+	{
+		if (remainingDoor == winDoor)
+		{
+			System.out.println( "YOU WIN!");
+			System.out.print ("Door ") ;
+			System.out.print(winDoor) ;
+			System.out.print (" was the winning door") ;
+		}
+		else 
+		{
+			System.out.println("YOU LOSE!");
+			System.out.print ("Door ") ;
+			System.out.print(winDoor) ;
+			System.out.print (" was the winning door") ;
+		}
+	}
+	else if (input.equals("no") || input.equals("No"))
+	{
+		if (playerDoor == winDoor)
+		{
+			System.out.println ("YOU WIN!");
+			System.out.print ("Door ") ;
+			System.out.print(winDoor) ;
+			System.out.print (" was the winning door") ;
+		}
+		else 
+		{
+			System.out.println("YOU LOSE!");
+			System.out.print ("Door ") ;
+			System.out.print(winDoor) ;
+			System.out.print (" was the winning door") ;
+		}
+	}
+		else
+	{
+	 System.out.println("*ERROR* please input \"Yes\" or \"No\":");
+		switchOrNah(winDoor, playerDoor, remainingDoor);
+	}
 }
+}
+
+	
+	
+
 
