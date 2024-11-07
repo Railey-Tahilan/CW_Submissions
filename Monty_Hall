@@ -1,41 +1,46 @@
 import java.util.Scanner;
-public class Mont {
+public class Monty_Hall {
 	static 	Scanner myReader= new Scanner(System.in) ;
 
 
 	public static void main(String[] args) {
 		
-		// TODO Auto-generated method stub
-		int winDoor=pickRandomDoor() ;
-		System.out.println(winDoor);
 		
 
+		
+		// This casts the method pickRandomDoor() into an int named "winDoor"
+		int winDoor=pickRandomDoor() ;
+		System.out.println(winDoor) ;
+
+		
+		// This casts the method pickPlayerDoor() into an int named "playerDoor"
 		int playerDoor = pickPlayerDoor() ;
 		
-		
-		int wrongDoorD=revealWrongDoor(winDoor, playerDoor) ;
-		int wrongDoorS=revealWrongDoorSame(winDoor, playerDoor) ;
-		int remainingDoor = revealRemainingDoor(wrongDoorD, playerDoor);
+		// This casts the methods revealWrongDoorD() into an int named "wrongDoor" 
+		int wrongDoor=revealWrongDoor(winDoor, playerDoor) ;
+	
+		// This casts the methods revealRemainingDoorD() into an int named "remainingDoor"
+		int remainingDoor = revealRemainingDoor(wrongDoor, playerDoor);
 		
 
 
 		
-		
+		// This prints out the method playerDoor();
 		System.out.println(playerDoor) ;
 	
-
+		// This prints out one of the wrong doors
 		System.out.print("Door ");
-		System.out.print(wrongDoorD) ;
-		System.out.println(" is a wrong door ");
+		System.out.print(wrongDoor) ;
+		System.out.println(" is a wrong door \n");
 		
-
+		// This asks the player if they would like to swap doors
 		System.out.print("Would you like to swap to door ")  ;
 		System.out.println(remainingDoor) ;
 		System.out.print("Please input \"Yes\" or \"No\":")  ;
 
 	
-		
-		switchOrNah(winDoor, playerDoor, remainingDoor);
+		// This calls the method swapOrStay which allows the player to input their answer
+		swapOrStay(winDoor, playerDoor, remainingDoor);
 		
 		
 		
@@ -47,6 +52,7 @@ public class Mont {
 	
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
+	// This method picks a random number from 1-3 and makes it the winning door
 	private static int pickRandomDoor()
 	{
 	return (int)(Math.random()*3+1) ;
@@ -61,17 +67,19 @@ public class Mont {
 	{
 	
 	
-		
+	// This prints out a statement that asks the player to pick a door from 1-3
 	System.out.println("Choose a door | (1) or (2) or (3)") ;
 	System.out.print("Please type input here:") ;
 	
 	String myInput = new String(myReader.next()) ;
 	
+	// This prints out a statement saying the number door the player has chosen
 	
 	if (myInput.equals("one")||myInput.equals("1"))
 	{ 
 		System.out.print("You chose door number ");
 		return 1;
+		
 	}
 	else if (myInput.equals("two")||myInput.equals("2"))
 	{
@@ -85,16 +93,23 @@ public class Mont {
 
 		return 3;
 	}
+	
+	
+	// This makes an error when the player selects a number out of the range of 1-3 and asks them to retry
 	else 
 	{
-		 System.out.println("*ERROR* please input \"1\" or \"2\" or \"3\"");
+		 System.out.println("*ERROR* *please restart the game*");
 		 pickPlayerDoor();
+		 return 0;
 	}
-	return 2 ;
+	
 		
 	}
 	
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	
+	// this method sees what the player chooses and what the winnign door and whatever door is left, reveals it as a wrong door
 	private static int revealWrongDoor(int win, int player)
 	{
 		if (win==3 && player==1)
@@ -126,6 +141,9 @@ public class Mont {
 			
 			return 2;
 		}
+		
+		
+		// this is when a player chooses the winning door and randomizes a number between the two remaining doors
 		if (win==1 && player==1)
 		{
 			
@@ -153,40 +171,11 @@ public class Mont {
 		
 			return 0 ;
 	}
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-	public static int revealWrongDoorSame (int win, int player)
-	{
-	if (win==1 && player==1)
-	{
-		
-		return (int)(Math.random()*2+2);
-	}
-	if (win==3 && player==3)
-	{
-		
-		return (int)(Math.random()*2+1);
-	}
-	else 
-	{
-		int randomNum = ((int)(Math.random()*2+4)) ;
-		if (win==2 && player==2 && randomNum==4)
-				{
-					return 1 ;
-				}
-		if (win==2 && player==2 && randomNum==5)
-		{
-			return 3 ;
-		}
 
-		
-	}
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
 	
-		return 0 ;
-		
-	}
-
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
+	// This method sees the wrong door that was revealed and the player door, and returns the reamining door that the player can swap to.
 	public static int revealRemainingDoor(int wrong, int player)
 	{
 		if (wrong==2 && player==1)
@@ -218,11 +207,16 @@ public class Mont {
 	}
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-	public static void switchOrNah(int winDoor, int playerDoor, int remainingDoor)
+	
+	//This method asks if the player would like to swap and reveals if they won or lost, and what the winning door was 
+	public static void swapOrStay(int winDoor, int playerDoor, int remainingDoor)
 	{
 	String input = new String(myReader.next());
+	
+	
 	if (input.equals("yes") || input.equals("Yes") ) 
 	{
+	// If the player chooses to swap and the door that they swap to is correct, they wim
 		if (remainingDoor == winDoor)
 		{
 			System.out.println( "YOU WIN!");
@@ -230,6 +224,8 @@ public class Mont {
 			System.out.print(winDoor) ;
 			System.out.print (" was the winning door") ;
 		}
+		
+	// If the player chooses to swap and the door that they swap to is wrong, they lose
 		else 
 		{
 			System.out.println("YOU LOSE!");
@@ -238,8 +234,12 @@ public class Mont {
 			System.out.print (" was the winning door") ;
 		}
 	}
+	
+
 	else if (input.equals("no") || input.equals("No"))
 	{
+	
+	// If the player chooses to stay and the door that they stay with is correct, they win
 		if (playerDoor == winDoor)
 		{
 			System.out.println ("YOU WIN!");
@@ -247,6 +247,7 @@ public class Mont {
 			System.out.print(winDoor) ;
 			System.out.print (" was the winning door") ;
 		}
+	// If the player chooses to stay and the door that they stay with is wrong, they lose
 		else 
 		{
 			System.out.println("YOU LOSE!");
@@ -255,10 +256,12 @@ public class Mont {
 			System.out.print (" was the winning door") ;
 		}
 	}
+	
+	// If the player chooses anything other than "yes" or "no" they are promted to choose again.
 		else
 	{
 	 System.out.println("*ERROR* please input \"Yes\" or \"No\":");
-		switchOrNah(winDoor, playerDoor, remainingDoor);
+		swapOrStay(winDoor, playerDoor, remainingDoor);
 	}
 }
 }
