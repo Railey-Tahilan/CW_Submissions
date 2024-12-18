@@ -1,44 +1,66 @@
 
-public class Loops_Annotation {
+public class Loops_Intro_Practice {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		/*You choose a number between 1-12
-		* This methods finds the respective month of your number
-		* Using a for loop and logic statements it goes through each month to see what you month
-		*/
-		
-		System.out.print(getMonth(3)) ;
-	}
-	
-	public static String getMonth(int n)
+
+		System.out.println(countLetters("big boy bobby", 'b'));
+		System.out.println(getFact(10));
+		System.out.println(getIfRepeats("Brrock"));
+
+
+
+		}
+	public static int getFact(int n)
+	{
+		int prod=0 ;
+		for (int i=n ; prod>i ; i--)
 		{
-			//This declares a variable of "months" which is given a value of the 12 months
-			String months = "January February March April May June "
-					+ "July August September October November December ";
-
-			//This is a for loop that starts at the index of 1 and continues until it is less than or equal to 12. It keeps adding 1 until it reaches the intended number
-			for (int i = 1; i <= 12; i++)
-			{
-				//It locates a space in the string "months" and sets it to sL
-				int sL = months.indexOf(' ');
-
-				//This if statement sees if n is equal to i
-				if (n == i)
-				{
-					//If n is equal to i then it prints out the starting index of "months" and ends before the space
-					return months.substring(0, sL);
-				}
-				//If n is not equal to i it adds 1 to sL and starts at the next 
-				else
-				{
-					// This adds an index to sL and sets it to "months"
-					months = months.substring(sL + 1);
-				}
-			}
-			// This returns if n never equals to i
-			return " /* What String would you put here? */ ";
+			
+			prod=prod*(n-1);
+			n-- ;	
 			
 		}
+		return prod;
+
+	}	
+	
+	
+	
+	
+	public static int countLetters(String str, char letter)
+	{
+		int count=0 ;
+		for (int  i=0 ; i<str.length() ; i++)
+		{
+			if (str.charAt(i)==letter)
+			{
+				count++;
+			}
+			
+		}
+		return count;
+
+	}	
+
+	
+	public static boolean getIfRepeats(String str)
+	{
+		
+		for (int i=0 ; i>str.length(); i++)
+		{
+			for (int j=i ; j>str.length(); j++)
+			
+			if (i==j)
+			{
+				
+			}
+			else if (str.charAt(i)== str.charAt(j))
+				{
+					return false;
+				}
+			}
+		
+		return true;
+	}
 }
