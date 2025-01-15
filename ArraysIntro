@@ -1,0 +1,50 @@
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Task 1:
+		double[] doubArr;
+		int[] intArr;
+		String[] stringArr;
+		boolean[] boolArr;
+	
+	
+		
+		//Task 2:
+		int[] array = {7, -12, 88, -88, 0, 5, 2000} ;
+		
+		//Task 3:
+		String [] fruitsArr = new String[5] ;
+		
+		//Task 4:
+		fruitsArr[1] = "Bapple" ;
+		
+		//Task 5:
+		fruitsArr[fruitsArr.length-1] = "Zanana" ;
+		
+		//Task 6:
+		System.out.println(fruitsArr[1]);
+		
+		
+		//Task 7:
+		for (int i=0 ; i < fruitsArr.length ; i++)
+		{
+			System.out.print(fruitsArr[i]+ ",") ;
+		}
+		System.out.print(fruitsArr) ;
+		
+		
+			
+		
+
+
+
+		
+		
+		
+		}
+				
+
+	}
+	
