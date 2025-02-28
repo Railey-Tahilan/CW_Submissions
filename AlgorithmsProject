@@ -5,7 +5,7 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 
 	
-		int[] nums={4,5,5,2,1};
+		int[] nums={4,5,5,5,2,1};
 		System.out.println(alg1(nums)+ "\n");
 		
 		System.out.println(alg2(nums)+ "\n");    
@@ -17,7 +17,7 @@ public class Algorithms {
 		alg5(nums);
 		System.out.println("\n") ;
 
-		System.out.println(alg6(nums,7)+ "\n");
+		System.out.println(alg6(nums)+ "\n");
 
 		System.out.println(alg7(nums,5)+ "\n");
 
@@ -34,39 +34,51 @@ public class Algorithms {
 		    
 		}
 	
-	
-	
-	public static int alg1(int[] nums) {
+	//This method returns the smallest number in the Array
+	public static int alg1(int[] nums) 
+	{
 	    int temp = nums[0];
-	    for (int i = 0; i < nums.length; i++) {
-	        if (nums[i] < temp) {
+	    for (int i = 0; i < nums.length; i++) 
+	    {
+	        if (nums[i] < temp)
+	        {
 	            temp = nums[i];
 	        }
 	    }
 	    return temp;
 	}
 
-	public static int alg2(int[] nums) {
+	//This method returns the index of the smallest number
+	public static int alg2(int[] nums) 
+	{
 	    int smallestIndex = 0;
-	    for (int i = 0; i < nums.length; i++) {
-	        if (nums[i] < nums[smallestIndex]) {
+	    for (int i = 0; i < nums.length; i++) 
+	    {
+	        if (nums[i] < nums[smallestIndex]) 
+	        {
 	            smallestIndex = i;
 	        }
 	    }
 	    return smallestIndex;
 	}
-
-	public static int alg3(int[] nums) {
+	
+	//This method returns the average of all numbers in the ArrayList. 
+	public static int alg3(int[] nums) 
+	{
 	    int theAverage = 0;
-	    for (int i = 0; i < nums.length; i++) {
+	    for (int i = 0; i < nums.length; i++) 
+	    {
 	        theAverage += nums[i];
 	    }
 	    return theAverage / nums.length;
 	}
 
-	public static boolean alg4(int[] nums) {
+	//This method returns true if all numbers in the ArrayList are even, and return false otherwise.
+	public static boolean alg4(int[] nums) 
+	{
 	    int counter = 0;
-	    for (int i = 0; i < nums.length; i++) {
+	    for (int i = 0; i < nums.length; i++)
+	    {
 	        if (nums[i] % 2 == 0) {
 	            counter++;
 	        }
@@ -79,14 +91,19 @@ public class Algorithms {
 	    return false;
 	}
 
-	public static void alg5(int[] nums) {
+	//In this method, if the ArrayList ever has two consecutive 5's, it will change them to 0's
+	public static void alg5(int[] nums) 
+	{
 	    int[] copyArr = new int[nums.length];
 
-	    for (int i = 0; i < nums.length; i++) {
+	    for (int i = 0; i < nums.length; i++) 
+	    {
 	        copyArr[i] = nums[i];
 	    }
-	    for (int i = 0; i < copyArr.length; i++) {
-	        if (nums[i] == 5 && nums[i + 1] == 5) {
+	    for (int i = 0; i < copyArr.length; i++) 
+	    {
+	        if (nums[i] == 5 && nums[i + 1] == 5) 
+	        {
 	            copyArr[i] = 0;
 	            copyArr[i + 1] = 0;
 	        }
@@ -96,15 +113,19 @@ public class Algorithms {
 	    }
 	}
 
-	public static boolean alg6(int[] nums, int number) {
-	    for (int i = 0; i < nums.length; i++) {
-	        if (nums[i] == number && nums[i + 1] == number && nums[i + 2] == number) {
+	//This method will true if any number shows up three times in a row, and return false otherwise
+	public static boolean alg6(int[] nums) {
+	    for (int i = 0; i < nums.length-2; i++) {
+	        if (nums[i] == nums[i + 1] && nums[i + 2] == nums[i]) {
 	            return true;
 	        }
+	        
+
 	    }
 	    return false;
 	}
 
+	//This method is passed an int and return how many times that int shows up in the array
 	public static int alg7(int[] nums, int number) {
 	    int counter = 0;
 	    for (int i = 0; i < nums.length; i++) {
@@ -114,41 +135,47 @@ public class Algorithms {
 	    }
 	    return counter;
 	}
-
+	
+	//This  method returns a backward version of the array
 	public static void alg8(int[] nums) {
 	    int[] copyArr = new int[nums.length];
 	    
-	    // Reverse the array
 	    for (int i = 0; i < nums.length; i++) {
 	        copyArr[i] = nums[nums.length - 1 - i];
 	    }
 
-	    // Print the reversed array
 	    for (int num : copyArr) {
 	        System.out.print(num + " ");
 	    }
 	}
 
-
-	public static void alg9(int[] nums) {
+	//This method shifts all elements to the right
+	public static void alg9(int[] nums) 
+	{
 	    int[] copyArr = new int[nums.length];
 	    int lastElement = nums[nums.length - 1];
-	    for (int i = copyArr.length - 1; i > 0; i--) {
+	    for (int i = copyArr.length - 1; i > 0; i--) 
+	    {
 	        copyArr[i] = nums[i - 1];
 	    }
 
 	    copyArr[0] = lastElement;
 
-	    for (int num : copyArr) {
+	    for (int num : copyArr) 
+	    {
 	        System.out.print(num + " ");
 	    }
 	}
-
-	public static void alg10(int[] nums) {
-	    for (int i = 1; i < nums.length; i++) {
+	
+	//This method uses insertion sort to return a sorted version of the array
+	public static void alg10(int[] nums) 
+	{
+	    for (int i = 1; i < nums.length; i++) 
+	    {
 	        int insert = nums[i];
 	        int j = i - 1;
-	        while (j >= 0 && nums[j] > insert) {
+	        while (j >= 0 && nums[j] > insert) 
+	        {
 	            nums[j + 1] = nums[j];
 	            j--;
 	        }
@@ -156,7 +183,8 @@ public class Algorithms {
 	        nums[j + 1] = insert;
 	    }
 
-	    for (int num : nums) {
+	    for (int num : nums) 
+	    {
 	        System.out.print(num + " ");
 	    }
 	}
