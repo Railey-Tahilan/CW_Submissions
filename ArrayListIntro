@@ -1,0 +1,64 @@
+import java.util.ArrayList ;
+
+public class ArrayListIntro {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		//Task 1
+		ArrayList emptyList=new  ArrayList();
+
+		System.out.print (emptyList + "\n" + "\n") ;
+		
+		
+		//Task 2
+		ArrayList<Integer> intArrList=new  ArrayList<Integer>();
+		ArrayList<String> strArrList=new  ArrayList<String>();
+
+		
+		//Task 3
+		intArrList.add(1) ;
+		intArrList.add(2) ;
+		intArrList.add(3) ;
+
+		strArrList.add("Alice") ;
+		strArrList.add("Bob") ;
+		strArrList.add("Charlie") ;
+
+		System.out.print (intArrList+ "\n") ;
+		System.out.print (strArrList + "\n" + "\n") ;
+
+		
+		//Task 4
+		intArrList.add(2,5) ;
+		strArrList.add(1,"Derek") ;
+
+		System.out.print (intArrList+ "\n") ;
+		System.out.print (strArrList + "\n" + "\n") ;
+
+		
+		//Task 5
+		System.out.print (intArrList.get(1) + "\n") ;
+		System.out.print (intArrList.get(intArrList.size()-1) + "\n") ;
+		System.out.print (strArrList.get(1) + "\n") ;
+		System.out.print (strArrList.get(strArrList.size()-1) + "\n" + "\n") ;
+		
+		
+		//Task 6
+		intArrList.add(0,0) ;
+		strArrList.add(0,"Zero") ;
+
+		System.out.print (intArrList+ "\n") ;
+		System.out.print (strArrList + "\n" + "\n") ;
+		
+		
+		//Task 7	
+		System.out.print (intArrList.remove(intArrList.size()-1)+ "\n") ;
+		System.out.print (strArrList.remove(strArrList.size()-1)) ;
+
+
+	}
+	
+
+}
