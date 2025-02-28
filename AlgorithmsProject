@@ -5,7 +5,7 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 
 	
-		int[] nums={4,5,5,5,2,1};
+		int[] nums={4,5,5,2,1};
 		System.out.println(alg1(nums)+ "\n");
 		
 		System.out.println(alg2(nums)+ "\n");    
@@ -62,18 +62,18 @@ public class Algorithms {
 	    return smallestIndex;
 	}
 	
-	//This method returns the average of all numbers in the ArrayList. 
+	//This method returns the average of all numbers in the Arra. 
 	public static int alg3(int[] nums) 
 	{
-	    int theAverage = 0;
+	    int average = 0;
 	    for (int i = 0; i < nums.length; i++) 
 	    {
-	        theAverage += nums[i];
+	        average += nums[i];
 	    }
-	    return theAverage / nums.length;
+	    return average / nums.length;
 	}
 
-	//This method returns true if all numbers in the ArrayList are even, and return false otherwise.
+	//This method returns true if all numbers in the Array are even, and return false otherwise.
 	public static boolean alg4(int[] nums) 
 	{
 	    int counter = 0;
