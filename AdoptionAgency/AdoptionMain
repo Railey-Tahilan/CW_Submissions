@@ -1,1 +1,46 @@
 
+package AdoptionAgency;
+
+public class AdoptionMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Dog Scooby = new Dog(true,2,"Scooby") ;
+		PuppyDog Doo = new PuppyDog(false,165,"Doo",true) ;
+		
+		PuppyDog James = new PuppyDog(false,454,"James",true) ;
+		PuppyDog Jamess = new PuppyDog(false,454,"James",true) ;
+		
+		System.out.println(Scooby.getAdoptionStatus());
+		System.out.println("");
+		Scooby.increaseAge();
+		System.out.println("");
+
+		Doo.increaseAge();
+		System.out.println("");
+
+		Scooby.stateAge();
+		System.out.println("");
+		Doo.stateAge();
+		System.out.println("");
+		System.out.println(Scooby);
+		System.out.println("");
+		System.out.println(Doo);
+
+		
+		System.out.println("____________________________________________________________________________________________________________________________________________");
+		System.out.println("");
+		System.out.println("");
+
+		System.out.println(James.equals(Jamess));
+
+
+		
+
+
+
+	}
+	
+
+}
