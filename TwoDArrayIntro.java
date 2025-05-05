@@ -1,4 +1,4 @@
-public class TwoDArrayIntroAssignment
+public class TwoDArrayIntro
 {
     public static void main(String[] args)
     {
